@@ -1,0 +1,2 @@
+ENV{ID_FS_LABEL_ENC}=="*", KERNEL=="sd*",   ACTION=="add",      SUBSYSTEMS=="usb", \
+         RUN+="/usr/local/sbin/ml-mounter.sh %k"
