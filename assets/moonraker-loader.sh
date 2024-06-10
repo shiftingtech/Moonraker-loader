@@ -41,6 +41,7 @@ do
     echo "uploading ${file}"
     curl -F "file=@${file}" -F "root"="gcodes" "http://${HOST}:${PORT}/server/files/upload"
 done
+echo 'm117 Files Copied!' >> /tmp/printer
 #cleanup  
 systemd-umount ${DIR}
 rmdir ${DIR}
