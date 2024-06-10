@@ -41,7 +41,7 @@ do
     echo "uploading ${file}"
     curl -F "file=@${file}" -F "root"="gcodes" "http://${HOST}:${PORT}/server/files/upload"
 done
-echo 'm117 Files Copied!' >> /tmp/printer
 #cleanup  
 systemd-umount ${DIR}
 rmdir ${DIR}
+curl --header "Content-Type: application/json"   --request POST --data '{"commands":["M117 Copy Complete"] }'   http://${HOST}:${PORT}/api/printer/command
