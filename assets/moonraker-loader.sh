@@ -44,4 +44,4 @@ done
 #cleanup  
 systemd-umount ${DIR}
 rmdir ${DIR}
-curl --header "Content-Type: application/json"   --request POST --data '{"commands":["M117 Copy Complete"] }'   http://${HOST}:${PORT}/api/printer/command
+curl --header "Content-Type: application/json"   --request POST --data '{"commands":["M117 Copy Complete"] }'   "http://${HOST}:${PORT}/api/printer/command"
